@@ -3,19 +3,21 @@
 </script>
 
 <div class="header">
-	<h1 class="header__logo">
-		<img src={logoSvg} alt="logo" />
-	</h1>
-	<nav class="header__nav">
-		<ul class="header__nav--items">
-			<li class="header__nav--item">
-				<a href="/" class="header__nav--link">Warehouses</a>
-			</li>
-			<li class="header__nav--item">
-				<a href="/inventory" class="header__nav--link"> Inventory</a>
-			</li>
-		</ul>
-	</nav>
+	<div class="header__content">
+		<h1 class="header__logo">
+			<img src={logoSvg} alt="logo" />
+		</h1>
+		<nav class="header__nav">
+			<ul class="header__nav--items">
+				<li class="header__nav--item">
+					<a href="/" class="header__nav--link">Warehouses</a>
+				</li>
+				<li class="header__nav--item">
+					<a href="/inventory" class="header__nav--link"> Inventory</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
 </div>
 
 <style lang="scss">
@@ -23,12 +25,21 @@
 		background-color: $in-stock-graphite;
 		display: flex;
 		flex-direction: column;
-		padding: 2rem 1rem 8rem 1rem;
-		gap: 2rem;
-		@include tablet {
-			justify-content: space-between;
-			flex-direction: row;
-			align-items: center;
+		align-items: center;
+		
+		&__content {
+			margin: 0 auto;
+			gap: 2rem;
+			padding: 2rem 1rem 8rem 1rem;
+			display: flex;
+			flex-direction: column;
+			width: 1280px;
+			max-width: 100%;
+			@include tablet {
+				justify-content: space-between;
+				flex-direction: row;
+				align-items: center;
+			}
 		}
 		&__logo {
 			display: flex;
