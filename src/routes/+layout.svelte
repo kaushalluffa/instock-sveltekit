@@ -1,7 +1,10 @@
 <script>
 	import '../styles/global.scss';
-	import Header from '$components/Header.svelte';
+	import { Header, Footer } from '$components';
 </script>
 
 <Header />
-<slot />
+<div class="content">
+	<slot />
+</div>
+<Footer />

@@ -2,14 +2,20 @@
 @import '@fontsource/titillium-web/300';
 @import '@fontsource/titillium-web/600';
 @import '@fontsource/titillium-web/700';
-
+@import './variables.scss';
+*,
 body {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Titillium Web', sans-serif;
 }
-
+body {
+	background-color: $in-stock-light-grey;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
 input {
 	border: none;
 }
@@ -18,4 +24,7 @@ li {
 	list-style: none;
 	margin: 0;
 	padding: 0;
+}
+.content {
+	flex: 1;
 }
