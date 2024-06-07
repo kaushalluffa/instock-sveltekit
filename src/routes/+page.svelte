@@ -11,13 +11,15 @@
 		&-page {
 			padding: 1rem;
 			background-color: $in-stock-white;
-			margin: 1rem;
 			border-radius: 4px;
 			height: 100%;
-			margin-top: -4rem;
 			border-bottom: 1px solid $in-stock-cloud;
+			max-width: 1020px;
+			width: 100%;
+			margin: -4rem 1rem 1rem 1rem;
 		}
 		&__header {
+			width: 100%;
 			display: flex;
 			flex-direction: column;
 			gap: 1rem;

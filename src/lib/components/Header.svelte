@@ -33,7 +33,7 @@
 			padding: 2rem 1rem 8rem 1rem;
 			display: flex;
 			flex-direction: column;
-			width: 1280px;
+			width: 1020px;
 			max-width: 100%;
 			@include tablet {
 				justify-content: space-between;
