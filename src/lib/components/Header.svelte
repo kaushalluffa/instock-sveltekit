@@ -30,7 +30,7 @@
 		&__content {
 			margin: 0 auto;
 			gap: 2rem;
-			padding: 2rem 1rem 8rem 1rem;
+			padding: 2rem 1rem 6rem 1rem;
 			display: flex;
 			flex-direction: column;
 			width: 1020px;
