@@ -35,6 +35,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@fontsource/titillium-web": "^5.0.20"
+		"@fontsource/titillium-web": "^5.0.20",
+		"node-appwrite": "^13.0.0"
 	}
 }
