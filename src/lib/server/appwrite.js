@@ -1,5 +1,5 @@
 // src/lib/server/appwrite.js
-import { Client, Account, Databases, ID } from 'node-appwrite';
+import { Client, Account, Databases, ID, Query } from 'node-appwrite';
 import {
 	PRIVATE_APP_WRITE_API_KEY,
 	PRIVATE_APP_WRITE_DATABASE_ID,
@@ -94,4 +94,92 @@ export async function getWarehousesClient({ cookies }) {
 		PRIVATE_APP_WRITE_WAREHOUSES_COLLECTION_ID
 	);
 	return warehouses;
+}
+
+/**
+ * Description placeholder
+ *
+ * @export
+ * @async
+ * @param {{ cookies: any; params: any; }} param0
+ * @param any
+ * @param any
+ * @returns any
+ */
+export async function deleteWarehouse({ cookies, params }) {
+	const session = cookies.get(SESSION_COOKIE);
+	if (!session) {
+		throw new Error('No user session');
+	}
+	client.setSession(session);
+	const deletedWarehouse = await databases.deleteDocument(
+		PRIVATE_APP_WRITE_DATABASE_ID,
+		PRIVATE_APP_WRITE_WAREHOUSES_COLLECTION_ID,
+		params.$id
+	);
+	return deletedWarehouse;
+}
+
+/**
+ * Description placeholder
+ *
+ * @export
+ * @async
+ * @param {{ cookies: any; params: any; }} param0
+ * @param any
+ * @param any
+ * @returns any
+ */
+export async function getOneWarehouseClient({ cookies, params }) {
+	const session = cookies.get(SESSION_COOKIE);
+	if (!session) {
+		throw new Error('No user session');
+	}
+	client.setSession(session);
+	const warehouse = await databases.getDocument(
+		PRIVATE_APP_WRITE_DATABASE_ID,
+		PRIVATE_APP_WRITE_WAREHOUSES_COLLECTION_ID,
+		params.warehouseId,
+		[
+			Query.select([
+				'$id',
+				'city',
+				'country',
+				'contact_name',
+				'warehouse_name',
+				'address',
+				'contact_position',
+				'contact_email',
+				'contact_phone',
+				'createdAt',
+				'updatedAt'
+			])
+		]
+	);
+	return warehouse;
+}
+
+/**
+ * Description placeholder
+ *
+ * @export
+ * @async
+ * @param {{ cookies: any; warehouseData: any; }} param0
+ * @param any
+ * @param any
+ * @returns any
+ */
+export async function updateOneWarehouseClient({ cookies, warehouseData }) {
+	const session = cookies.get(SESSION_COOKIE);
+	if (!session) {
+		throw new Error('No user session');
+	}
+	client.setSession(session);
+	const updatedWarehouse = await databases.updateDocument(
+		PRIVATE_APP_WRITE_DATABASE_ID,
+		PRIVATE_APP_WRITE_WAREHOUSES_COLLECTION_ID,
+		warehouseData.$id,
+		warehouseData
+	);
+	return updatedWarehouse;
 }
