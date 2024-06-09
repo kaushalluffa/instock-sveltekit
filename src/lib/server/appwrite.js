@@ -73,3 +73,25 @@ export async function createWarehouseClient({ cookies, warehouseData }) {
 	);
 	return createdWarehouseResponse;
 }
+
+/**
+ * Description placeholder
+ *
+ * @export
+ * @async
+ * @param {{ cookies: any; }} param0
+ * @param any
+ * @returns any
+ */
+export async function getWarehousesClient({ cookies }) {
+	const session = cookies.get(SESSION_COOKIE);
+	if (!session) {
+		throw new Error('No user session');
+	}
+	client.setSession(session);
+	const warehouses = await databases.listDocuments(
+		PRIVATE_APP_WRITE_DATABASE_ID,
+		PRIVATE_APP_WRITE_WAREHOUSES_COLLECTION_ID
+	);
+	return warehouses;
+}
