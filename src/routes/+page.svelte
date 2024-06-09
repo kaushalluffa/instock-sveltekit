@@ -3,18 +3,20 @@
 	import editIcon from '$assets/editIcon.svg';
 	import rightArrowIcon from '$assets/rightArrowIcon.svg';
 	import sortIcon from '$assets/sortIcon.svg';
+	import { PageContentWrapper, PageHeaderWithSearch } from '$components';
 	export let data;
 	$: warehouses = data?.warehouses?.documents;
 	$: totalWarehouses = data?.warehouses?.total;
 	// $: console.log(warehouses);
 </script>
 
-<div class="warehouses-page">
-	<div class="warehouses__header">
-		<h1 class="warehouses__heading">Warehouses</h1>
-		<input placeholder="Search..." class="warehouses__search" />
-		<a href="/add/warehouse" class="warehouses__add">+ Add New Warehouse</a>
-	</div>
+<PageContentWrapper>
+	<PageHeaderWithSearch
+		heading="Warehouses"
+		placeholder="Search..."
+		actionBtnLink="/add/warehouse"
+		actionBtnText="+ Add New Warehouse"
+	/>
 	<div class="warehouses__list">
 		<div class="warehouses__table--header">
 			<p class="warehouses__table--warehouse">
@@ -36,7 +38,7 @@
 				<div class="warehouse__card--left">
 					<div class="warehouse__card--warehouse-name">
 						<h4 class="warehouse__card--heading">WAREHOUSE</h4>
-						<a href="/" class="warehouse__card--warehouse-link">
+						<a href="/details/warehouse/{warehouse?.$id}" class="warehouse__card--warehouse-link">
 							{warehouse?.warehouse_name}
 							<img src={rightArrowIcon} alt="go to {warehouse?.warehouse_name} details" />
 						</a>
@@ -67,9 +69,9 @@
 						<p class="warehouse__card--text">{warehouse?.contact_email}</p>
 					</div>
 					<form class="warehouse__card--form">
-						<button class="warehouse__card--edit">
+						<a href="/edit/warehouse/{warehouse?.$id}" class="warehouse__card--edit">
 							<img src={editIcon} alt="edit button" />
-						</button>
+						</a>
 						<button class="warehouse__card--delete delete-tablet">
 							<img src={deleteIcon} alt="delete button" />
 						</button>
@@ -78,7 +80,7 @@
 			</div>
 		{/each}
 	</div>
-</div>
+</PageContentWrapper>
 
 <style lang="scss">
 	.warehouses {
@@ -140,55 +142,11 @@
 			&--actions {
 				flex: 0.4;
 				@include laptop {
-					flex: .7;
+					flex: 0.7;
 				}
 			}
 		}
-		&-page {
-			background-color: $in-stock-white;
-			border-radius: 4px;
-			height: 100%;
-			border-bottom: 1px solid $in-stock-cloud;
-			max-width: 1020px;
-			width: 100%;
-			margin: -4rem 1rem 1rem 1rem;
-		}
-		&__header {
-			width: 100%;
-			display: flex;
-			flex-direction: column;
-			gap: 1rem;
-			padding: 1rem;
-			@include tablet {
-				flex-direction: row;
-				justify-content: space-between;
-			}
-		}
-		&__heading {
-			font-size: $h1M;
-			font-weight: normal;
-			@include laptop {
-				flex: 2;
-			}
-		}
-		&__search {
-			border-radius: 20px;
-			border: 1px solid $in-stock-cloud;
-			min-height: 36px;
-			padding: 0 1rem;
-			flex: 1;
-		}
-		&__add {
-			background-color: $in-stock-indigo;
-			color: $in-stock-white;
-			border-radius: 20px;
-			padding: 0.5rem 1rem;
-			width: fit-content;
-			text-decoration: none;
-			text-align: center;
-			flex: 1;
-			width: 100%;
-		}
+
 		&__list {
 			display: flex;
 			flex-direction: column;
