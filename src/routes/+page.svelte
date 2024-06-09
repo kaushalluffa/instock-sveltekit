@@ -2,7 +2,7 @@
 	<div class="warehouses__header">
 		<h1 class="warehouses__heading">Warehouses</h1>
 		<input placeholder="Search..." class="warehouses__search" />
-		<a href="/" class="warehouses__add">+ Add New Warehouse</a>
+		<a href="/add/warehouse" class="warehouses__add">+ Add New Warehouse</a>
 	</div>
 </div>
 
