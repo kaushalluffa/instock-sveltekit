@@ -2,6 +2,7 @@
 import { Client, Account, Databases, ID, Query } from 'node-appwrite';
 import {
 	PRIVATE_APP_WRITE_API_KEY,
+	PRIVATE_APP_WRITE_CATEGORIES_COLLECTION_ID,
 	PRIVATE_APP_WRITE_DATABASE_ID,
 	PRIVATE_APP_WRITE_INVENTORIES_COLLECTION_ID,
 	PRIVATE_APP_WRITE_WAREHOUSES_COLLECTION_ID
@@ -207,4 +208,73 @@ export async function getWarehouseInventories({ cookies, warehouseId }) {
 		[Query.equal('warehouse_id', [warehouseId])]
 	);
 	return inventories;
+}
+
+/**
+ * Description placeholder
+ *
+ * @export
+ * @async
+ * @param {{ cookies: any; inventoryId: any; }} param0
+ * @param any
+ * @param any
+ * @returns any
+ */
+export async function getOneInventoryDetailsClient({ cookies, inventoryId }) {
+	const session = cookies.get(SESSION_COOKIE);
+	if (!session) {
+		throw new Error('No user session');
+	}
+	client.setSession(session);
+	const inventory = await databases.getDocument(
+		PRIVATE_APP_WRITE_DATABASE_ID,
+		PRIVATE_APP_WRITE_INVENTORIES_COLLECTION_ID,
+		inventoryId
+	);
+	return inventory;
+}
+
+/**
+ * Description placeholder
+ *
+ * @export
+ * @async
+ * @param {{ cookies: any; }} param0
+ * @param any
+ * @param any
+ * @returns any
+ */
+export async function getInventories({ cookies }) {
+	const session = cookies.get(SESSION_COOKIE);
+	if (!session) {
+		throw new Error('No user session');
+	}
+	client.setSession(session);
+	const inventories = await databases.listDocuments(
+		PRIVATE_APP_WRITE_DATABASE_ID,
+		PRIVATE_APP_WRITE_INVENTORIES_COLLECTION_ID
+	);
+	return inventories;
+}
+
+/**
+ * Description placeholder
+ *
+ * @export
+ * @async
+ * @param {{ cookies: any; }} param0
+ * @param any
+ * @returns any
+ */
+export async function getCategories({ cookies }) {
+	const session = cookies.get(SESSION_COOKIE);
+	if (!session) {
+		throw new Error('No user session');
+	}
+	client.setSession(session);
+	const categories = await databases.listDocuments(
+		PRIVATE_APP_WRITE_DATABASE_ID,
+		PRIVATE_APP_WRITE_CATEGORIES_COLLECTION_ID
+	);
+	return categories;
 }
