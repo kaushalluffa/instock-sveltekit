@@ -1,6 +1,11 @@
 export { default as Header } from './Header.svelte';
 export { default as Footer } from './Footer.svelte';
 export { default as PageHeaderWithSearch } from './PageHeaderWithSearch.svelte';
-export { default as PageContentWrapper } from './PageContentWrapper.svelte';
 export { default as FormPageHeader } from './FormPageHeader.svelte';
 export { default as WarehouseForm } from './WarehouseForm.svelte';
+export { default as WarehouseTableHeader } from './WarehouseTableHeader.svelte';
+export { default as WarehouseCard } from './WarehouseCard.svelte';
+export { default as InventoryCard } from './InventoryCard.svelte';
+export { default as InventoryTableHeader } from './InventoryTableHeader.svelte';
+export { default as DetailsPageHeader } from './DetailsPageHeader.svelte';
+export { default as InventoryForm } from './InventoryForm.svelte';
