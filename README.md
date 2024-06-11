@@ -47,7 +47,7 @@ warehouses
 21. See the following screenshots to create attributes for each collections:
     1.  First create the <b>Categories</b>: <br/>
 [![Screenshot-2024-06-10-at-20-34-05.png](https://i.postimg.cc/MKCz24d8/Screenshot-2024-06-10-at-20-34-05.png)](https://postimg.cc/w7QCDwCW)
-    1. Then create the <b>Inventories</b> but skip the warehouse_id and category_id relationship field you see in the screenshot we will set that up in later steps. I accidentally typed it warehouse_id but its actually the full warehouse relation so it would make sense to just name it warehouse and same thing with category_id (its a hassle to fix all this 🥲):<br/>
+    1. Then create the <b>Inventories</b> but skip the warehouse_id and category_id relationship field you see in the screenshot we will set that up in later steps. I accidentally typed it warehouse_id but its actually the full warehouse relation so it would make sense to just name it warehouse and same thing with category_id (its a hassle to fix all this 🥲) SO I SUGGEST PLEASE DO THIS AS OF NOW THIS MIGHT BE FIXED SOON AND EVERYTHING WILL BE UPDATED:<br/>
 [![Screenshot-2024-06-10-at-20-38-43.png](https://i.postimg.cc/1zPnP4JP/Screenshot-2024-06-10-at-20-38-43.png)](https://postimg.cc/zytXFzsP)
     1. Then create the <b>Warehouse</b> but skip the inventories relationship field (and yes this one is correctly named):<br/>
 [![Screenshot-2024-06-10-at-20-39-58.png](https://i.postimg.cc/YqHhQvBF/Screenshot-2024-06-10-at-20-39-58.png)](https://postimg.cc/9zLmhFMX)
