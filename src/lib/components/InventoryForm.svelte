@@ -43,7 +43,7 @@
 			<label class="details__label" for="description">Description</label>
 			<input
 				value={inventory?.item_description}
-				class="details__input"
+				class="details__input description"
 				type="text"
 				id="description"
 				name="description"
@@ -183,7 +183,6 @@
 			border: 1px solid $in-stock-cloud;
 			min-height: 36px;
 			padding: 0 1rem;
-			flex: 1;
 			&--hidden {
 				display: none;
 			}
@@ -194,7 +193,6 @@
 			border: 1px solid $in-stock-cloud;
 			min-height: 36px;
 			padding: 0 1rem;
-			flex: 1;
 			font-size: 1rem;
 		}
 		&__item {
@@ -214,5 +212,8 @@
 			border-bottom: 1px solid $in-stock-cloud;
 			flex-direction: column;
 		}
+	}
+	.description {
+		min-height: 120px;
 	}
 </style>
