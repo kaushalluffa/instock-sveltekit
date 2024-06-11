@@ -3,13 +3,17 @@
 	export let isEditPage = false;
 	export let categories;
 	export let warehouses;
-	export let inventoryData;
+	export let inventoryData = undefined;
 	$: inventory = inventoryData ?? {
 		item_name: '',
 		item_description: '',
-		category: '',
+		categoriy_id: {
+			$id: '',
+			name: ''
+		},
 		$id: '',
-		quantity: 0
+		quantity: 0,
+		status: ''
 	};
 </script>
 

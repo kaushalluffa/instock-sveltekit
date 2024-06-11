@@ -278,3 +278,29 @@ export async function getCategories({ cookies }) {
 	);
 	return categories;
 }
+
+/**
+ * Description placeholder
+ *
+ * @export
+ * @async
+ * @param {{ cookies: any; inventoryData: any; }} param0
+ * @param any
+ * @param any
+ * @returns any
+ */
+export async function createInventory({ cookies, inventoryData }) {
+	const session = cookies.get(SESSION_COOKIE);
+	if (!session) {
+		throw new Error('No user session');
+	}
+	client.setSession(session);
+	
+	const createdInventoryResponse = await databases.createDocument(
+		PRIVATE_APP_WRITE_DATABASE_ID,
+		PRIVATE_APP_WRITE_INVENTORIES_COLLECTION_ID,
+		ID.unique(),
+		inventoryData
+	);
+	return createdInventoryResponse;
+}
