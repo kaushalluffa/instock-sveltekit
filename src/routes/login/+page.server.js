@@ -1,9 +1,7 @@
-// src/routes/signup/+page.server.js
-
 import { SESSION_COOKIE, createAdminClient } from '$lib/server/appwrite.js';
 import { error, redirect } from '@sveltejs/kit';
-export const load = async ({ locals }) => {
-	if (locals?.user) {
+export const load = async ({ locals, url }) => {
+	if (locals?.user && url.pathname.startsWith('/login')) {
 		redirect(301, '/');
 	}
 };

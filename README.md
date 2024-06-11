@@ -98,3 +98,4 @@ npm run dev
 ```
 ### Go to /signup route and signup 
 ### You won't see any data as there is nothing in the database right now. But you can start by adding a warehouse. All fields are required in that form.
+### You might see its not redirecting you to the correct page which i am working on fixing but if you see in your cookies for localhost instock_sveltekit_session then it should be good and you can try stopping the server and starting it again it should redirect u to home page automatically as the session exists in cookies

@@ -3,7 +3,11 @@
 import { SESSION_COOKIE, createAdminClient } from '$lib/server/appwrite.js';
 import { error, redirect } from '@sveltejs/kit';
 import { ID } from 'node-appwrite';
-
+export const load = async ({ locals, url }) => {
+	if (locals?.user && url.pathname.startsWith('/signup')) {
+		redirect(301, '/');
+	}
+};
 /**
  * Description placeholder
  *
