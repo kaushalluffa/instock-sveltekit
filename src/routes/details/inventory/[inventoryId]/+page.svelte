@@ -18,7 +18,7 @@
 		</div>
 		<div class="inventory__category">
 			<h4 class="inventory__heading">CATEGORY:</h4>
-			<p class="inventory__text">{inventoryData?.categoriy_id?.name}</p>
+			<p class="inventory__text">{inventoryData?.category?.name}</p>
 		</div>
 	</div>
 	<div class="inventory__right">
@@ -34,12 +34,9 @@
 		</div>
 		<div class="inventory__warehouse">
 			<h4 class="inventory__heading">WAREHOUSE:</h4>
-			<a href="/details/warehouse/{inventoryData?.warehouse_id?.$id}" class="inventory__text--link">
-				{inventoryData?.warehouse_id?.warehouse_name}
-				<img
-					src={rightArrowIcon}
-					alt="go to {inventoryData?.warehouse_id?.warehouse_name} details"
-				/>
+			<a href="/details/warehouse/{inventoryData?.warehouses?.$id}" class="inventory__text--link">
+				{inventoryData?.warehouses?.warehouse_name}
+				<img src={rightArrowIcon} alt="go to {inventoryData?.warehouses?.warehouse_name} details" />
 			</a>
 		</div>
 	</div>

@@ -33,8 +33,8 @@ export const actions = {
 			item_description,
 			status,
 			quantity: Number(quantity),
-			warehouse_id: warehouse,
-			categoriy_id: item_category,
+			warehouses: warehouse,
+			category: item_category,
 			createdAt: new Date().toISOString(),
 			updatedAt: new Date().toISOString()
 		};

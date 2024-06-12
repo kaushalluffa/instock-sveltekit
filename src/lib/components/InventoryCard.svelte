@@ -17,7 +17,7 @@
 		<div class="inventory-card--item-category">
 			<h4 class="inventory-card--heading">CATEGORY</h4>
 			<p class="inventory-card--text">
-				{inventory?.categoriy_id?.name}
+				{inventory?.category?.name}
 			</p>
 		</div>
 		<form class="inventory-card--form">

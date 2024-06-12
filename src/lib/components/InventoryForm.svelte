@@ -7,7 +7,7 @@
 	$: inventory = inventoryData ?? {
 		item_name: '',
 		item_description: '',
-		categoriy_id: {
+		category: {
 			$id: '',
 			name: ''
 		},
@@ -53,7 +53,7 @@
 			<select
 				name="category"
 				id="category"
-				value={inventory?.categoriy_id?.$id}
+				value={inventory?.category?.$id}
 				class="details__select"
 			>
 				{#if categories && Array.isArray(categories) && categories.length > 0}

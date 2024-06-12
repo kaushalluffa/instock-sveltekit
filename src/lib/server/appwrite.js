@@ -205,7 +205,7 @@ export async function getWarehouseInventories({ cookies, warehouseId }) {
 	const inventories = await databases.listDocuments(
 		PRIVATE_APP_WRITE_DATABASE_ID,
 		PRIVATE_APP_WRITE_INVENTORIES_COLLECTION_ID,
-		[Query.equal('warehouse_id', [warehouseId])]
+		[Query.equal('warehouses', warehouseId)]
 	);
 	return inventories;
 }

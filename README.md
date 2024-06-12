@@ -47,9 +47,9 @@ warehouses
 21. See the following screenshots to create attributes for each collections:
     1.  First create the <b>Categories</b>: <br/>
 [![Screenshot-2024-06-10-at-20-34-05.png](https://i.postimg.cc/MKCz24d8/Screenshot-2024-06-10-at-20-34-05.png)](https://postimg.cc/w7QCDwCW)
-    1. Then create the <b>Inventories</b> but skip the warehouse_id and category_id relationship field you see in the screenshot we will set that up in later steps. I accidentally typed it warehouse_id but its actually the full warehouse relation so it would make sense to just name it warehouse and same thing with category_id (its a hassle to fix all this 🥲) SO I SUGGEST PLEASE DO THIS AS OF NOW THIS MIGHT BE FIXED SOON AND EVERYTHING WILL BE UPDATED:<br/>
-[![Screenshot-2024-06-10-at-20-38-43.png](https://i.postimg.cc/1zPnP4JP/Screenshot-2024-06-10-at-20-38-43.png)](https://postimg.cc/zytXFzsP)
-    1. Then create the <b>Warehouse</b> but skip the inventories relationship field (and yes this one is correctly named):<br/>
+    1. Then create the <b>Inventories</b> but skip the warehouse and category relationship field you see in the screenshot we will set that up in later steps.:<br/>
+[![Screenshot-2024-06-11-at-09-24-25.png](https://i.postimg.cc/Fs8K1pvB/Screenshot-2024-06-11-at-09-24-25.png)](https://postimg.cc/RN1mDcN7)
+    1. Then create the <b>Warehouse</b> but skip the inventories relationship field :<br/>
 [![Screenshot-2024-06-10-at-20-39-58.png](https://i.postimg.cc/YqHhQvBF/Screenshot-2024-06-10-at-20-39-58.png)](https://postimg.cc/9zLmhFMX)
 1.  Now lets setup those relations within collections. 
     ### Warehouse Collection
@@ -59,17 +59,18 @@ warehouses
 [![Screenshot-2024-06-10-at-20-43-06.png](https://i.postimg.cc/ZRXjwrx4/Screenshot-2024-06-10-at-20-43-06.png)](https://postimg.cc/9RtGMwkn)
     1. Choose Two way Relationship radio
     2. Choose inventories from Related Collection dropdown.
-    3. Choose Many to One relation from Relation dropdown.
-    4. Enter warehouse_id as Attributes Key input
+    3. Choose One to Many relation from Relation dropdown.
+    4. Enter warehouses as Attributes Key input
     5. Choose Cascade - delete all related document from On deleting a document dropdown.
     6. And create it. This will create a relation between warehouse collection to inventory collection means a warehouse can have many inventories linked to it.
-    7. You will see in the <b>Inventory</b> collection there is already a relationship created with name <b>warehouse_id</b> like this:<br/>
-[![Screenshot-2024-06-10-at-20-50-38.png](https://i.postimg.cc/Gp2KPcsF/Screenshot-2024-06-10-at-20-50-38.png)](https://postimg.cc/4YDpsRPy)
-    ### Inventories Collection
+    7. You will see in the <b>Inventory</b> collection there is already a relationship created with name <b>warehouses</b> like this:<br/>
+[![Screenshot-2024-06-11-at-21-44-30.png](https://i.postimg.cc/QNbp3N2b/Screenshot-2024-06-11-at-21-44-30.png)](https://postimg.cc/V5JS9wLr)
+
+   ### Inventories Collection
     1. So again choose the relationship option in create attribute dropdown.
     2. In the modal choose One way relationship radio.
     3. Choose <b>Categories</b> from Related Collection dropdown.
-    4. Enter attribute key <b>categoriy_id</b>. Just a warning its misspelled as well. At the time of writing this its not fixed but it will be fixed asap here, in db, and the code too.
+    4. Enter attribute key <b>category</b>. Just a warning its misspelled as well. At the time of writing this its not fixed but it will be fixed asap here, in db, and the code too.
     5. Choose Many to One option from Relation dropdown.
     6. Choose Cascade - delete all related documents option from On Deleting a document.
     7. And create it. This will create a relation between categories collection to inventory collection, means every inventory will have a category linked to it.
