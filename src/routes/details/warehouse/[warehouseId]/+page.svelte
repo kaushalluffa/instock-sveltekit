@@ -13,7 +13,7 @@
 	<InventoryTableHeader />
 	{#if warehouseInventories && Array.isArray(warehouseInventories) && warehouseInventories.length > 0}
 		{#each warehouseInventories as inventory (inventory?.$id)}
-			<InventoryCard {inventory} />
+			<InventoryCard {inventory} deleteAction="/inventory?/deleteInventory" />
 		{/each}
 	{/if}
 	<div class="warehouses-page"></div>

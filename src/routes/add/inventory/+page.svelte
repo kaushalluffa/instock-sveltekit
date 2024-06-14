@@ -6,4 +6,4 @@
 </script>
 
 <FormPageHeader heading="Add New Inventory Item" backBtnLink="/inventory" />
-<InventoryForm submitBtnText="+ Add Item" {warehouses} {categories} />
+<InventoryForm submitBtnText="+ Add Item" {warehouses} {categories} formAction="/inventory?/addInventory" />

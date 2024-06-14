@@ -3,4 +3,4 @@
 </script>
 
 <FormPageHeader heading="Add New Warehouses" />
-<WarehouseForm submitBtnText="+ Add Warehouse" />
+<WarehouseForm submitBtnText="+ Add Warehouse" formAction="?/createWarehouse" />
