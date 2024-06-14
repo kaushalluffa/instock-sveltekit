@@ -7,4 +7,4 @@
 </script>
 
 <FormPageHeader heading="Edit Item" backBtnLink="/" />
-<InventoryForm isEditPage={true} {inventoryData} {categories} {warehouses} />
+<InventoryForm isEditPage={true} {inventoryData} {categories} {warehouses} formAction="/inventory?/updateInventory" />

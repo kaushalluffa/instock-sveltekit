@@ -5,4 +5,4 @@
 </script>
 
 <FormPageHeader heading="Edit Warehouse" backBtnLink="/" />
-<WarehouseForm inputData={warehouseData} submitBtnText="Save" />
+<WarehouseForm inputData={warehouseData} submitBtnText="Save"  formAction="?/updateWarehouse"/>
