@@ -1,4 +1,5 @@
 <script>
+	export let formAction = '';
 	export let submitBtnText = 'Save';
 	export let isEditPage = false;
 	export let categories;
@@ -17,7 +18,7 @@
 	};
 </script>
 
-<form method="POST" class="inventory-form">
+<form method="POST" class="inventory-form" action={formAction}>
 	<div class="inventory-form__inputs">
 		<section class="details__item">
 			<h2 class="details__heading">Item Details</h2>

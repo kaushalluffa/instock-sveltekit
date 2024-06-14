@@ -9,3 +9,4 @@ export { default as InventoryCard } from './InventoryCard.svelte';
 export { default as InventoryTableHeader } from './InventoryTableHeader.svelte';
 export { default as DetailsPageHeader } from './DetailsPageHeader.svelte';
 export { default as InventoryForm } from './InventoryForm.svelte';
+export { default as DeleteModal } from './DeleteModal.svelte';

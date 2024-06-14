@@ -314,7 +314,7 @@ export async function createInventory({ cookies, inventoryData }) {
  * @param any
  * @returns any
  */
-export async function updateInventory({ cookies, updatedInventoryData }) {
+export async function updateInventoryClient({ cookies, updatedInventoryData }) {
 	const session = cookies.get(SESSION_COOKIE);
 	if (!session) {
 		throw new Error('No user session');
@@ -328,4 +328,28 @@ export async function updateInventory({ cookies, updatedInventoryData }) {
 		updatedInventoryData
 	);
 	return createdInventoryResponse;
+}
+
+/**
+ * Description placeholder
+ *
+ * @export
+ * @async
+ * @param {{ cookies: any; inventoryId: any; }} param0
+ * @param  any
+ * @param any
+ * @returns any
+ */
+export async function deleteInventoryClient({ cookies, inventoryId }) {
+	const session = cookies.get(SESSION_COOKIE);
+	if (!session) {
+		throw new Error('No user session');
+	}
+	client.setSession(session);
+	const deletedInventory = await databases.deleteDocument(
+		PRIVATE_APP_WRITE_DATABASE_ID,
+		PRIVATE_APP_WRITE_INVENTORIES_COLLECTION_ID,
+		inventoryId
+	);
+	return deletedInventory;
 }

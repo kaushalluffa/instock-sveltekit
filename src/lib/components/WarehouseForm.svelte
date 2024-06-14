@@ -1,4 +1,5 @@
 <script>
+	export let formAction = '';
 	import { page } from '$app/stores';
 	export let inputData = undefined;
 	export let submitBtnText = 'Save';
@@ -16,7 +17,7 @@
 	};
 </script>
 
-<form method="POST" class="warehouse-form">
+<form method="POST" class="warehouse-form" action={formAction}>
 	<div class="warehouse-form--inputs">
 		<section class="details__warehouse">
 			<h2 class="details__heading">Warehouse Details</h2>
